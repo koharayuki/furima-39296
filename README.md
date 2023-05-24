@@ -52,7 +52,6 @@ Things you may want to cover:
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
 | title              | string     | null: false                    |
-| image              | string     | null: false                    |
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
 | price              | integer    | null: false                    |
@@ -86,9 +85,9 @@ Things you may want to cover:
 | ------------------ | ---------- | ------------------------------ |
 | date_of_shipment   | string     | null: false                    |
 | delivery_charge    | text       | null: false                    |
-| post_code          | text       | null: false                    |
+| post_code          | string     | null: false                    |
 | address            | string     | null: false                    |
-| number             | integer    | null: false                    |
+| number             | string     | null: false                    |
 
 ### Association
 
