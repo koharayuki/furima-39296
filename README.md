@@ -45,8 +45,6 @@ Things you may want to cover:
 
 - has_many :items
 - has_many :orders
-- has_one :deliveries
-
 
 
 ## itemsテーブル
@@ -62,22 +60,9 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :comments
+- has_many :deliveries
 - belongs_to :user
 
-
-## commentsテーブル
-
-|  Column            |  Type      |  Options                       |
-| ------------------ | ---------- | ------------------------------ |
-| content            | text       | null: false                    |
-| user               | references | null: false, foreign_key: true |
-| order              | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :item
-- belongs_to :user
 
 
 ## ordersテーブル
@@ -90,7 +75,7 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- has_one :deliveries
+- has_one :delivery
 
 
 ## deliveriesテーブル
@@ -104,5 +89,5 @@ Things you may want to cover:
 
 ### Association
 
-- belongs_to :user
+- belongs_to :item
 - belongs_to :order
