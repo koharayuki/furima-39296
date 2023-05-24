@@ -52,8 +52,12 @@ Things you may want to cover:
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
 | title              | string     | null: false                    |
+| content            | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
+| delivery_charge    | text       | null: false                    |
+| shipping_origin    | string     | null: false                    |
+| date_of_shipment   | string     | null: false                    |
 | price              | integer    | null: false                    |
 | comment            | text       | null: false                    |
 | user               | references | null: false, foreign_key: true |
@@ -83,11 +87,13 @@ Things you may want to cover:
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
-| date_of_shipment   | string     | null: false                    |
-| delivery_charge    | text       | null: false                    |
 | post_code          | string     | null: false                    |
-| address            | string     | null: false                    |
-| number             | string     | null: false                    |
+| prefecture_id      | int        | null: false                    |
+| city               | varchar    | null: false                    |
+| brock              | varchar    | null: false                    |
+| building           | varchar    | null: false                    |
+| phone_number       | string     | null: false                    |
+| order              | references | null: false, foreign_key: true |
 
 ### Association
 
