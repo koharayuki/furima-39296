@@ -31,7 +31,7 @@ Things you may want to cover:
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
-| nickname           | string     | null: false,                   |
+| nickname           | string     | null: false                    |
 | email              | string     | null: false, unique: true      |
 | encrypted_password | string     | null: false                    |
 | last_name          | string     | null: false                    |
@@ -87,7 +87,7 @@ Things you may want to cover:
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
 | post_code          | string     | null: false                    |
-| shipping_origin_id | string     | null: false                    |
+| shipping_origin_id | integer    | null: false                    |
 | city               | string     | null: false                    |
 | brock              | string     | null: false                    |
 | building           | string     |                                |
