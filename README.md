@@ -44,16 +44,15 @@ Things you may want to cover:
 ### Association
 
 - has_many :items
-- has_one :deliveries
+- has_many :orders
 
 
 ## itemsテーブル
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
-| name               | string     | null: false                    |
 | title              | string     | null: false                    |
-| saller             | string     | null: false                    |
+| image              | string     | null: false                    |
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
 | price              | integer    | null: false                    |
@@ -87,6 +86,7 @@ Things you may want to cover:
 | ------------------ | ---------- | ------------------------------ |
 | date_of_shipment   | string     | null: false                    |
 | delivery_charge    | text       | null: false                    |
+| post_code          | text       | null: false                    |
 | address            | string     | null: false                    |
 | number             | integer    | null: false                    |
 
