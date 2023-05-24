@@ -25,7 +25,7 @@ Things you may want to cover:
 
 
 
-<!-- # furima-39296のER図
+# furima-39296のER図
 
 ## usersテーブル
 
@@ -105,4 +105,4 @@ Things you may want to cover:
 ### Association
 
 - belongs_to :user
-- belongs_to :order -->
+- belongs_to :order
