@@ -55,11 +55,10 @@ Things you may want to cover:
 | content            | text       | null: false                    |
 | category_id        | integer    | null: false                    |
 | status_id          | integer    | null: false                    |
-| delivery_charge_id | text       | null: false                    |
-| shipping_origin_id | string     | null: false                    |
-| date_of_shipment_id| string     | null: false                    |
+| delivery_charge_id | integer    | null: false                    |
+| shipping_origin_id | integer    | null: false                    |
+| date_of_shipment_id| integer    | null: false                    |
 | price              | integer    | null: false                    |
-| comment            | text       | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
@@ -91,7 +90,7 @@ Things you may want to cover:
 | shipping_origin_id | string     | null: false                    |
 | city               | string     | null: false                    |
 | brock              | string     | null: false                    |
-| building           | string     | null: false                    |
+| building           | string     |                                |
 | phone_number       | string     | null: false                    |
 | order              | references | null: false, foreign_key: true |
 
