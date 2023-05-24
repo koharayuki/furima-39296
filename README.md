@@ -32,35 +32,37 @@ Things you may want to cover:
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
 | nickname           | string     | null: false,                   |
-| email              | string     | null: false, unique            |
+| email              | string     | null: false, unique: true      |
 | encrypted_password | string     | null: false                    |
 | last_name          | string     | null: false                    |
 | first_name         | string     | null: false                    |
 | suv_last_name      | string     | null: false                    |
 | suv_first_name     | string     | null: false                    |
-| date_of_birth      | string     | null: false                    |
+| date_of_birth      | date       | null: false                    |
 
 
 ### Association
 
 - has_many :items
-- has_many :orders
+- has_one :deliveries
 
 
 ## itemsテーブル
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
+| name               | string     | null: false                    |
 | title              | string     | null: false                    |
-| text               | text       | null: false                    |
-| category           | text       | null: false                    |
-| status             | text       | null: false                    |
-| price              | text       | null: false                    |
+| saller             | string     | null: false                    |
+| category_id        | integer    | null: false                    |
+| status_id          | integer    | null: false                    |
+| price              | integer    | null: false                    |
+| comment            | text       | null: false                    |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
 
-- has_many :deliveries
+- has_one :order
 - belongs_to :user
 
 
@@ -69,12 +71,13 @@ Things you may want to cover:
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
-| credit_card        | text       | null: false                    |
+| item               | references | null: false, foreign_key: true |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
+- belongs_to :item
 - has_one :delivery
 
 
@@ -84,10 +87,9 @@ Things you may want to cover:
 | ------------------ | ---------- | ------------------------------ |
 | date_of_shipment   | string     | null: false                    |
 | delivery_charge    | text       | null: false                    |
-| region             | string     | null: false                    |
-| user               | references | null: false, foreign_key: true |
+| address            | string     | null: false                    |
+| number             | integer    | null: false                    |
 
 ### Association
 
-- belongs_to :item
 - belongs_to :order
