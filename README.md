@@ -31,22 +31,20 @@ Things you may want to cover:
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
-| nickname           | string     | null: false,                   |
-| email              | string     | null: false, unique            |
+| nickname           | string     | null: false                    |
+| email              | string     | null: false, unique: true      |
 | encrypted_password | string     | null: false                    |
 | last_name          | string     | null: false                    |
 | first_name         | string     | null: false                    |
 | suv_last_name      | string     | null: false                    |
 | suv_first_name     | string     | null: false                    |
-| date_of_birth      | string     | null: false                    |
+| date_of_birth      | date       | null: false                    |
 
 
 ### Association
 
 - has_many :items
 - has_many :orders
-- has_one :deliveries
-
 
 
 ## itemsテーブル
@@ -54,55 +52,48 @@ Things you may want to cover:
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
 | title              | string     | null: false                    |
-| text               | text       | null: false                    |
-| category           | text       | null: false                    |
-| status             | text       | null: false                    |
-| price              | text       | null: false                    |
-| user               | references | null: false, foreign_key: true |
-
-### Association
-
-- has_many :comments
-- belongs_to :user
-
-
-## commentsテーブル
-
-|  Column            |  Type      |  Options                       |
-| ------------------ | ---------- | ------------------------------ |
 | content            | text       | null: false                    |
+| category_id        | integer    | null: false                    |
+| status_id          | integer    | null: false                    |
+| delivery_charge_id | integer    | null: false                    |
+| shipping_origin_id | integer    | null: false                    |
+| date_of_shipment_id| integer    | null: false                    |
+| price              | integer    | null: false                    |
 | user               | references | null: false, foreign_key: true |
-| order              | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :item
+- has_one :order
 - belongs_to :user
+
 
 
 ## ordersテーブル
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
-| credit_card        | text       | null: false                    |
+| item               | references | null: false, foreign_key: true |
 | user               | references | null: false, foreign_key: true |
 
 ### Association
 
 - belongs_to :user
-- has_one :deliveries
+- belongs_to :item
+- has_one :delivery
 
 
 ## deliveriesテーブル
 
 |  Column            |  Type      |  Options                       |
 | ------------------ | ---------- | ------------------------------ |
-| date_of_shipment   | string     | null: false                    |
-| delivery_charge    | text       | null: false                    |
-| region             | string     | null: false                    |
-| user               | references | null: false, foreign_key: true |
+| post_code          | string     | null: false                    |
+| shipping_origin_id | integer    | null: false                    |
+| city               | string     | null: false                    |
+| brock              | string     | null: false                    |
+| building           | string     |                                |
+| phone_number       | string     | null: false                    |
+| order              | references | null: false, foreign_key: true |
 
 ### Association
 
-- belongs_to :user
 - belongs_to :order
