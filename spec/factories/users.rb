@@ -15,4 +15,3 @@ FactoryBot.define do
   end
 end
 
-@user = FactoryBot.build(:user)
