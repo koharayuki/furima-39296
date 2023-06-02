@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  # has_one :order
+  has_one :order
   belongs_to :user
   has_one_attached :image
 
@@ -15,10 +15,8 @@ class Item < ApplicationRecord
   validates :content, presence: true
   with_options presence: true, format: { with: /\A[0-9]+\z/ } do
     validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9_999_999 },
-    presence: { message: "can't be blank" }
-    end
+                      presence: { message: "can't be blank" }
+  end
   validates :category_id, :status_id, :delivery_charge_id, :shipping_origin_id, :date_of_shipment_id,
-  numericality: { other_than: 1 , message: "can't be blank"}
-
-
+            numericality: { other_than: 1, message: "can't be blank" }
 end

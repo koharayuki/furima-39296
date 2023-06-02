@@ -16,7 +16,7 @@ RSpec.describe Item, type: :model do
       it 'imageが空では登録できない' do
         @item.image = nil
         @item.valid?
-        expect(@item.errors.full_messages).to include ("Image can't be blank")
+        expect(@item.errors.full_messages).to include("Image can't be blank")
       end
 
       it 'titleが空では登録できない' do
@@ -64,25 +64,25 @@ RSpec.describe Item, type: :model do
       it 'priceが空では登録できない' do
         @item.price = ''
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price can't be blank", "Price is invalid", "Price is not a number")
+        expect(@item.errors.full_messages).to include("Price can't be blank", 'Price is invalid', 'Price is not a number')
       end
 
       it '価格が¥300より低い場合は登録できない' do
         @item.price = 299
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be greater than or equal to 300")
+        expect(@item.errors.full_messages).to include('Price must be greater than or equal to 300')
       end
 
       it '価格が¥9999999より高い場合は登録できない' do
         @item.price = 10_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than or equal to 9999999")
+        expect(@item.errors.full_messages).to include('Price must be less than or equal to 9999999')
       end
 
       it '価格が半角数字以外の値では登録できない' do
         @item.price = '３００'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price is not a number")
+        expect(@item.errors.full_messages).to include('Price is not a number')
       end
 
       it 'userが紐づいていないと登録できない' do
