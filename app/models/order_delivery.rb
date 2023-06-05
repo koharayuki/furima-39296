@@ -2,7 +2,7 @@ class OrderDelivery
   include ActiveModel::Model
   attr_accessor :item_id, :user_id, :post_code, :shipping_origin_id, :city, :brock, :building, :phone_number, :token
 
-  validates :shipping_origin_id, numericality: { other_than: 1, message: "can't be blank" }
+  validates :shipping_origin_id, numericality: { other_than: 1, message: "を選択してください"}
 
   with_options presence: true do
     validates :item_id

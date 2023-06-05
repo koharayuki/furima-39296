@@ -1,0 +1,23 @@
+ja:
+  activemodel:
+    attributes:
+      order_delivery:
+        post_code: 郵便番号
+        shipping_origin_id: 都道府県
+        city: 市区町村
+        brock: 番地
+        phone_number: 電話番号
+        token: クレジットカード情報
+
+
+
+
+
+
+
+        
+
+
+
+
+

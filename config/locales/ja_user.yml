@@ -1,0 +1,24 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        last_name: お名前(苗字)
+        first_name: お名前(名前)
+        last_name: お名前(苗字)
+        suv_last_name: お名前(苗字・カナ)
+        suv_first_name: お名前(名前・カナ)
+        date_of_birth: 生年月日
+
+
+
+
+
+
+
+        
+
+
+
+
+

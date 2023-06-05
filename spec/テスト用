@@ -5,3 +5,17 @@
 
 @order_delivery.errors.full_messages
 
+
+# ------------------------
+
+@user = FactoryBot.build(:user)
+
+@user.errors.full_messages
+
+# ------------------------
+
+@item = FactoryBot.build(:item)
+
+@item.errors.full_messages
+
+# ------------------------
