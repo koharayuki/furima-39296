@@ -5,6 +5,3 @@
 
 @order_delivery.errors.full_messages
 
-
-# @item.image = fixture_file_upload('images/test_image.png')
-# @item.save
