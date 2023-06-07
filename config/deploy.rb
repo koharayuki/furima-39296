@@ -4,6 +4,9 @@ lock '3.17.3'
 # Capistranoのログの表示に利用する
 set :application, 'furima-39296'
 
+# mainブランチを参照する
+set :branch, "main"
+
 # どのリポジトリからアプリをpullするかを指定する
 set :repo_url,  'git@github.com:koharayuki/furima-39296.git'
 
